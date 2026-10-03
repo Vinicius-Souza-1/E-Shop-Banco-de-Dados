@@ -1,0 +1,8 @@
+.env
+.env.*
+*.local.sql
+backup*.sql
+*.bak
+*.mwb.bak
+.DS_Store
+Thumbs.db

@@ -1,0 +1,52 @@
+-- EXEMPLO OPCIONAL: copie apenas para um arquivo local ignorado (*.local.sql).
+-- Defina senhas locais antes de remover os comentarios e executar.
+-- -- PARTE 8 - ROLES, USUARIOS E PERMISSOES
+-- CREATE ROLE IF NOT EXISTS
+--     'portfolio_role_administrador',
+--     'portfolio_role_funcionario',
+--     'portfolio_role_cliente';
+-- 
+-- GRANT ALL PRIVILEGES ON portfolio_eshop.*
+--     TO 'portfolio_role_administrador';
+-- 
+-- GRANT SELECT ON portfolio_eshop.vw_clientes_atendimento
+--     TO 'portfolio_role_funcionario';
+-- GRANT SELECT ON portfolio_eshop.Funcionarios
+--     TO 'portfolio_role_funcionario';
+-- GRANT SELECT, UPDATE ON portfolio_eshop.Produtos
+--     TO 'portfolio_role_funcionario';
+-- GRANT SELECT, INSERT, UPDATE ON portfolio_eshop.Pedidos
+--     TO 'portfolio_role_funcionario';
+-- GRANT SELECT, INSERT, UPDATE ON portfolio_eshop.ItensPedidos
+--     TO 'portfolio_role_funcionario';
+-- 
+-- GRANT SELECT ON portfolio_eshop.vw_produtos_disponiveis
+--     TO 'portfolio_role_cliente';
+-- 
+-- -- Senhas didaticas: devem ser trocadas antes de qualquer uso real.
+-- CREATE USER IF NOT EXISTS 'portfolio_admin_eshop'@'localhost'
+--     IDENTIFIED BY '<DEFINA_UMA_SENHA_LOCAL>';
+-- CREATE USER IF NOT EXISTS 'portfolio_funcionario_eshop'@'localhost'
+--     IDENTIFIED BY '<DEFINA_UMA_SENHA_LOCAL>';
+-- CREATE USER IF NOT EXISTS 'portfolio_cliente_eshop'@'localhost'
+--     IDENTIFIED BY '<DEFINA_UMA_SENHA_LOCAL>';
+-- 
+-- GRANT 'portfolio_role_administrador'
+--     TO 'portfolio_admin_eshop'@'localhost';
+-- GRANT 'portfolio_role_funcionario'
+--     TO 'portfolio_funcionario_eshop'@'localhost';
+-- GRANT 'portfolio_role_cliente'
+--     TO 'portfolio_cliente_eshop'@'localhost';
+-- 
+-- SET DEFAULT ROLE 'portfolio_role_administrador'
+--     TO 'portfolio_admin_eshop'@'localhost';
+-- SET DEFAULT ROLE 'portfolio_role_funcionario'
+--     TO 'portfolio_funcionario_eshop'@'localhost';
+-- SET DEFAULT ROLE 'portfolio_role_cliente'
+--     TO 'portfolio_cliente_eshop'@'localhost';
+-- 
+-- -- Conferencia das permissoes.
+-- SHOW GRANTS FOR 'portfolio_admin_eshop'@'localhost';
+-- SHOW GRANTS FOR 'portfolio_funcionario_eshop'@'localhost';
+-- SHOW GRANTS FOR 'portfolio_cliente_eshop'@'localhost';
+-- 
